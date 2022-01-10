@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="PokemonLibrary" ng-controller="HomeController">
+
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{{pageTitle}}</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="css/pk-header.css"/>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!--Deps-->
+    <script type="text/javascript" src="js/lib/angular.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular-route.min.js"></script>
+
+    <!--Modules-->
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <!--Infra-->
+    <script type="text/javascript" src="js/infra/app-routes.js"></script>
+
+    <!--Services-->
+    <script type="text/javascript" src="js/services/messages-service.js"></script>
+
+    <!--Controllers-->
+    <script type="text/javascript" src="js/controllers/home-controller.js"></script>
+    <script type="text/javascript" src="js/controllers/pokemon-search-controller.js"></script>
+
+    <!--Directives-->
+    <script type="text/javascript" src="js/directives/pk-header.js"></script>
+    <script type="text/javascript" src="js/directives/pk-card.js"></script>
+</head>
+
+<body>
+    <pk-header></pk-header>
+    <div ng-view></div>
+</body>
+
+</html>
