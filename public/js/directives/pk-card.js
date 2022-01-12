@@ -6,7 +6,8 @@ function Card(messagesService){
         scope: {
             title: '@',
             content: '@',
-            img: '@'
+            img: '@',
+            buttonLabel: '@'
         },
         templateUrl: 'js/directives/templates/pk-card.html',
         link: function(scope){

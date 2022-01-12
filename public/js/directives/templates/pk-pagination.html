@@ -1,0 +1,7 @@
+<ul class="pagination">
+    <li ng-click="remove()"><i class="material-icons">chevron_left</i></li>
+    <li ng-repeat="page in pages" ng-click="choosePageNumber(page.number)" ng-class="page.class">
+        <a>{{page.number}}</a>
+    </li>
+    <li ng-click="add()"><i class="material-icons">chevron_right</i></li>
+</ul>
