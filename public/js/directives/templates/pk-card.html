@@ -1,6 +1,7 @@
 <div class="card indigo darken-1 white-text hoverable">
     <div class="card-image blue darken-2">
-        <img src="{{img}}" width="300px" height="300px">
+        <img src="{{img}}" width="300px" height="300px" ng-if="img">
+        <img src="img/question.png" width="300px" height="300px" ng-if="!img">
     </div>
     <div class="card-content blue darken-4">
         <span class="card-title">{{title}}</span>
