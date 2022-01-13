@@ -5,7 +5,9 @@ function Pagination(){
         restrict: 'E',
         scope: {
             maxPageNumber: '=',
-            numbersPerPagination: '='
+            numbersPerPagination: '=',
+            selectPageNumberFunction: '=',
+            initialPageNumber: '='
         },
         templateUrl: 'js/directives/templates/pk-pagination.html',
         link: function(scope){
@@ -18,7 +20,7 @@ function Pagination(){
             scope.pages = [];
             let paginationModifier = 0;
 
-            choosePageNumber(1);
+            choosePageNumber(scope.initialPageNumber);
 
             function updatePageNumbers(){
                 scope.pages = [... Array(scope.numbersPerPagination).keys()].map(function(item){
@@ -31,10 +33,10 @@ function Pagination(){
 
             function choosePageNumber(numberChoosed){
                 scope.pages = [];
+                scope.selectPageNumberFunction(numberChoosed);
                 updatePageNumbers();
                 let positionChoosed = (numberChoosed-1) % scope.numbersPerPagination;
                 scope.pages[positionChoosed].class = 'active red';
-                
             }
 
             function add(){

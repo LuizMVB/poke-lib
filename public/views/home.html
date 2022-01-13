@@ -16,7 +16,11 @@
             <pk-card title="{{pokemon.name}}" button-label="{{msg('common.label.details')}}" img="{{pokemon.imageUrl}}"></pk-card>
         </div>
         <div class="col s12 center">
-            <pk-pagination numbers-per-pagination="12" max-page-number="93">
+            <pk-pagination numbers-per-pagination="12" 
+                           max-page-number="maxPageNumber" 
+                           page-number-selected="pageNumberSelected"
+                           select-page-number-function="selectPageNumber"
+                           initial-page-number="1">
             </pk-pagination>
         </div>
     </div>
