@@ -9,8 +9,7 @@ function PokemonSearchController($scope, $http){
 
     function selectPageNumber(pageNumberSelected) {
         $scope.pokemons = [];
-        let offset = pageNumberSelected - 1;
-        console.log($scope.numbersPerPagination, offset);
+        let offset = (pageNumberSelected - 1) * $scope.numbersPerPagination;
         let promise1 = $http.get('https://pokeapi.co/api/v2/pokemon?limit=' + $scope.numbersPerPagination + '&offset=' + offset);
         promise1.then(function(res1){
             $scope.maxPageNumber = Math.ceil(res1.data.count / $scope.numbersPerPagination);
