@@ -43,7 +43,7 @@ function Pagination(){
                 let nextPagination = paginationModifier + scope.numbersPerPagination;
                 if(nextPagination <= scope.maxPageNumber){
                     paginationModifier = nextPagination;
-                    choosePageNumber(1);
+                    choosePageNumber(nextPagination + 1);
                 }
             }
 
@@ -51,7 +51,7 @@ function Pagination(){
                 let previousPagination = paginationModifier - scope.numbersPerPagination;
                 if(previousPagination >= 0){
                     paginationModifier = previousPagination;
-                    choosePageNumber(scope.numbersPerPagination);
+                    choosePageNumber(previousPagination + scope.numbersPerPagination);
                 }
             }
         }
