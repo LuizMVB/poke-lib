@@ -13,7 +13,7 @@
     </div>
     <div class="row">
         <div class="col s3" ng-repeat="pokemon in pokemons | filter: {name: pokemonSearchTextFilter}">
-            <pk-card title="{{pokemon.name}}" button-label="{{msg('common.label.details')}}" img="{{pokemon.imageUrl}}"></pk-card>
+            <pk-card title="{{pokemon.name}}" img="{{pokemon.imageUrl}}"></pk-card>
         </div>
         <div class="col s12 center">
             <pk-pagination numbers-per-pagination="12" 
