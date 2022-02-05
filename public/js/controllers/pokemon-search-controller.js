@@ -17,6 +17,8 @@ function PokemonSearchController($scope, $http){
     }
 
     function selectPageNumber(pageNumberSelected) {
+        $scope.pokemonSearchTextFilter = undefined;
+        $scope.msgErro = undefined;
         $scope.pokemons = [];
         let offset = (pageNumberSelected - 1) * $scope.numbersPerPagination;
         let promise1 = $http.get('https://pokeapi.co/api/v2/pokemon?limit=' + $scope.numbersPerPagination + '&offset=' + offset);
