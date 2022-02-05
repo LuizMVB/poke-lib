@@ -2,10 +2,19 @@ angular.module('PokemonLibrary').controller('PokemonSearchController', PokemonSe
 
 function PokemonSearchController($scope, $http){
     $scope.selectPageNumber = selectPageNumber;
+    $scope.validateSearchInput = validateSearchInput;
 
     $scope.pageTitle = $scope.msg('common.app.name');
     $scope.pokemons = [];
     $scope.numbersPerPagination = 20;
+
+    function validateSearchInput(pokemonSearchTextFilter){
+        if(pokemonSearchTextFilter.match('[0-9]')){
+            $scope.msgErro = $scope.msg('home.searchInput.erro.message');
+        }else{
+            $scope.msgErro = undefined;
+        }
+    }
 
     function selectPageNumber(pageNumberSelected) {
         $scope.pokemons = [];

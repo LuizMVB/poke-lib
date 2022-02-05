@@ -8,9 +8,13 @@ function MessagesService(){
         //COMMON
         'common.app.name'                           : 'Pokemon Library',
         'common.label.details'                      : 'Details',
+        'common.title.notFound'                     : 'Nothing Here',
+        'common.subtitle.notFound'                  : 'Trye another page',
 
         //HOME
         'home.label.search'                         : 'Search Your Pokemon',
+        'home.searchInput.erro.message'             : 'There cannot be numeric digits ' +
+                                                      'in the pokemon\'s name'
     };
     
     function getMessages (key, ...args) {
