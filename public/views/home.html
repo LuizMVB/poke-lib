@@ -12,7 +12,7 @@
                     <label for="icon_prefix">{{msg('home.label.search')}}</label>
                     <span class="helper-text" ng-if="msgErro">{{msgErro}}</span>
                 </div>
-                <div ng-hide="filteredPokemons.length">
+                <div ng-hide="filteredPokemons.length || !pokemonSearchTextFilter">
                     <pk-not-found></pk-not-found>
                 </div>
             </div>
