@@ -10,6 +10,7 @@ function MessagesService(){
         'common.label.details'                      : 'Details',
         'common.title.notFound'                     : 'Nothing Here',
         'common.subtitle.notFound'                  : 'Trye another page',
+        'common.label.loading'                      : 'Loading...',
 
         //HOME
         'home.label.search'                         : 'Search Your Pokemon',

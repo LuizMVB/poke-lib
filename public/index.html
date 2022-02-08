@@ -9,6 +9,7 @@
 
     <!--CSS-->
     <link rel="stylesheet" href="css/pk-header.css"/>
+    <link rel="stylesheet" href="css/pk-loading.css">
 
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -41,10 +42,12 @@
     <script type="text/javascript" src="js/directives/pk-card.js"></script>
     <script type="text/javascript" src="js/directives/pk-pagination.js"></script>
     <script type="text/javascript" src="js/directives/pk-not-found.js"></script>
+    <script type="text/javascript" src="js/directives/pk-loading.js"></script>
 </head>
 
 <body>
-    <pk-header></pk-header>
+    <pk-loading></pk-loading>
+    <pk-header></pk-header>   
     <div ng-view></div>
 </body>
 
