@@ -9,7 +9,7 @@ function MessagesService(){
         'common.app.name'                           : 'Pokemon Library',
         'common.label.details'                      : 'Details',
         'common.title.notFound'                     : 'Nothing Here',
-        'common.subtitle.notFound'                  : 'Trye another page',
+        'common.subtitle.notFound'                  : 'Try another page',
         'common.label.loading'                      : 'Loading...',
 
         //HOME

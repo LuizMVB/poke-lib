@@ -1,12 +1,11 @@
 angular.module('PokemonLibrary').controller('PokemonSearchController', PokemonSearchController);
 
-function PokemonSearchController($scope, $http){
+function PokemonSearchController($scope, $http, Constants){
     $scope.selectPageNumber = selectPageNumber;
     $scope.validateSearchInput = validateSearchInput;
 
     $scope.pageTitle = $scope.msg('common.app.name');
     $scope.pokemons = [];
-    $scope.numbersPerPagination = 20;
 
     function validateSearchInput(pokemonSearchTextFilter){
         if(pokemonSearchTextFilter.match('[0-9]')){
@@ -20,12 +19,12 @@ function PokemonSearchController($scope, $http){
         $scope.pokemonSearchTextFilter = undefined;
         $scope.msgErro = undefined;
         $scope.pokemons = [];
-        let offset = (pageNumberSelected - 1) * $scope.numbersPerPagination;
-        let promise1 = $http.get('https://pokeapi.co/api/v2/pokemon?limit=' + $scope.numbersPerPagination + '&offset=' + offset);
+        let offset = (pageNumberSelected - 1) * Constants.DEFAULT_NUMBER_PER_PAGINATION;
+        let promise1 = $http.get(Constants.POKE_API_URL + '/pokemon?limit=' + Constants.DEFAULT_NUMBER_PER_PAGINATION + '&offset=' + offset);
         promise1.then(function(res1){
-            $scope.maxPageNumber = Math.ceil(res1.data.count / $scope.numbersPerPagination);
+            $scope.maxPageNumber = Math.ceil(res1.data.count / Constants.DEFAULT_NUMBER_PER_PAGINATION);
             res1.data.results.forEach(result => {
-                let promise2 = $http.get(result.url);
+                let promise2 = $http.get(Constants.POKE_API_URL + result.url.slice(25));
                 promise2.then(function(res2){
                     $scope.pokemons.push(
                         {
